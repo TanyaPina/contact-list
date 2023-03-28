@@ -33,7 +33,11 @@ const CreateContact = ({ onSaveContact, editingContact, onUpdateContact }) => {
         const is_current = event.target.checked;
         setContact((contact) => ({ ...contact, is_current}));
     };
-
+    
+    const handleNotesChange = (event) => {
+        const is_current = event.target.value;
+        setContact((contact) => ({ ...contact, notes}));
+    };
 
     return (
         <Form className='form-contacts' onSubmit={handleSubmit}>
