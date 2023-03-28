@@ -39,6 +39,17 @@ const CreateContact = ({ onSaveContact, editingContact, onUpdateContact }) => {
         setContact((contact) => ({ ...contact, notes}));
     };
 
+    const clearForm = () => {
+        setContact({ 
+        firstname: "", 
+        lastname: "",  
+        email: "",
+        phone:"",
+        is_current: false,
+        notes:""
+    })
+    }
+
     return (
         <Form className='form-contacts' onSubmit={handleSubmit}>
     </Form>
