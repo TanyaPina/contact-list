@@ -19,6 +19,11 @@ const CreateContact = ({ onSaveContact, editingContact, onUpdateContact }) => {
         setContact((contact) => ({ ...contact, firstname }));
     };
 
+    const handleLastnameChange = (event) => {
+        const lastname = event.target.value;
+        setContact((contact) => ({ ...contact, lastname }));
+    };
+
     return (
         <Form className='form-contacts' onSubmit={handleSubmit}>
     </Form>
