@@ -83,6 +83,16 @@ const CreateContact = ({ onSaveContact, editingContact, onUpdateContact }) => {
             });
     };
 
+    //A function to handle the submit in both cases - Post and Put request!
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (contact.id) {
+            putContact(contact);
+        } else {
+            postContact(contact);
+        }
+    };
+
     return (
         <Form className='form-contacts' onSubmit={handleSubmit}>
     </Form>
