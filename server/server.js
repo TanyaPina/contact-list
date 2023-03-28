@@ -31,14 +31,15 @@ app.post('/api/students', async (req, res) => {
         const newStudent = {
             firstname: req.body.firstname,
             lastname: req.body.lastname,
-            iscurrent: req.body.iscurrent
+            is_current: req.body.is_current
         };
         //console.log([newStudent.firstname, newStudent.lastname, newStudent.iscurrent]);
         const result = await db.query(
             'INSERT INTO students(firstname, lastname, is_current) VALUES($1, $2, $3) RETURNING *',
-            [newStudent.firstname, newStudent.lastname, newStudent.iscurrent],
+            [newStudent.firstname, newStudent.lastname, newStudent.is_current],
         );
-        console.log(result.rows[0]);
+        console.log(newStudent);
+        console.log(result.rows[0], "hello");
         res.json(result.rows[0]);
 
     } catch (e) {
