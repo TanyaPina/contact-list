@@ -29,6 +29,11 @@ const CreateContact = ({ onSaveContact, editingContact, onUpdateContact }) => {
         setContact((contact) => ({ ...contact, phone }));
     };
 
+    const handleCheckChange = (event) => {
+        const is_current = event.target.checked;
+        setContact((contact) => ({ ...contact, is_current}));
+    };
+
 
     return (
         <Form className='form-contacts' onSubmit={handleSubmit}>
