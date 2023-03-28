@@ -4,15 +4,15 @@ import MyNavBar from './components/Navbar'
 import ListStudents from './components/ListStudents'
 
 
-function App() {
+function Home() {
 
   return (
     <div className="App">
       <MyNavBar />
       <ListStudents />
-
+      {/*<CreateContact/>*/}
     </div>
   )
 }
 
-export default App
+export default Home
