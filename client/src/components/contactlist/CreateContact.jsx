@@ -50,6 +50,22 @@ const CreateContact = ({ onSaveContact, editingContact, onUpdateContact }) => {
     })
     }
 
+    //A function to handle the post request
+    const postContact = (newContact) => {
+        return fetch("http://localhost:8080/api/contacts", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(newContact),
+        })
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                onSaveContact(data);
+                clearForm();
+            });
+    };
+    
     return (
         <Form className='form-contacts' onSubmit={handleSubmit}>
     </Form>
