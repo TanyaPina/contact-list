@@ -24,6 +24,12 @@ const CreateContact = ({ onSaveContact, editingContact, onUpdateContact }) => {
         setContact((contact) => ({ ...contact, lastname }));
     };
 
+    const handlePhoneChange = (event) => {
+        const phone = event.target.value;
+        setContact((contact) => ({ ...contact, phone }));
+    };
+
+
     return (
         <Form className='form-contacts' onSubmit={handleSubmit}>
     </Form>
