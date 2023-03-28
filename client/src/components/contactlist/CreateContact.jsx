@@ -65,7 +65,24 @@ const CreateContact = ({ onSaveContact, editingContact, onUpdateContact }) => {
                 clearForm();
             });
     };
-    
+
+    //A function to handle the put request
+    const putContact = (toEditContact) => {
+        return fetch(`http://localhost:8080/api/contacts/${toEditContact.id}`, {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(toEditContact),
+        })
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                onUpdateContact(data);
+                //this line just for cleaning the form
+                clearForm();
+            });
+    };
+
     return (
         <Form className='form-contacts' onSubmit={handleSubmit}>
     </Form>
