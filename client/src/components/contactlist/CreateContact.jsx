@@ -13,6 +13,12 @@ const CreateContact = ({ onSaveContact, editingContact, onUpdateContact }) => {
         notes:""
     });
 
+    //create functions that handle the event of the user typing into the form
+    const handleFirstNameChange = (event) => {
+        const firstname = event.target.value;
+        setContact((contact) => ({ ...contact, firstname }));
+    };
+
     return (
         <Form className='form-contacts' onSubmit={handleSubmit}>
     </Form>
