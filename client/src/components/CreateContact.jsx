@@ -24,6 +24,12 @@ const CreateContact = ({ onSaveContact, editingContact, onUpdateContact }) => {
         setContact((contact) => ({ ...contact, lastname }));
     };
 
+
+    const handleEmailChange = (event) => {
+        const email = event.target.value;
+        setContact((contact) => ({ ...contact, email }));
+    };
+
     const handlePhoneChange = (event) => {
         const phone = event.target.value;
         setContact((contact) => ({ ...contact, phone }));
@@ -115,6 +121,17 @@ const CreateContact = ({ onSaveContact, editingContact, onUpdateContact }) => {
                     required
                     value={contact.lastname}
                     onChange={handleLastnameChange}
+                />
+            </Form.Group>
+            <Form.Group>
+                <Form.Label>Email</Form.Label>
+                <input
+                    type="text"
+                    id="add-user-email"
+                    placeholder="Email"
+                    required
+                    value={contact.email}
+                    onChange={handleEmailChange}
                 />
             </Form.Group>
     </Form>
