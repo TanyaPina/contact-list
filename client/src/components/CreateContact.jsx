@@ -155,6 +155,17 @@ const CreateContact = ({ onSaveContact, editingContact, onUpdateContact }) => {
             <Button type="submit" variant="outline-success">{contact.id ? "Edit Student" : "Add Student"}</Button>
             {contact.id ? <Button type="button" variant="outline-warning" onClick={clearForm}>Cancel</Button> : null}
             </Form.Group>
+            <Form.Group>
+                <Form.Label>Notes</Form.Label>
+                <input
+                    type="text"
+                    id="add-user-notes"
+                    placeholder="Notes"
+                    required
+                    value={contact.notes}
+                    onChange={handleNotesChange}
+                />
+            </Form.Group>
     </Form>
 );
 };
