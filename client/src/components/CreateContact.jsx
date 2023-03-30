@@ -95,6 +95,17 @@ const CreateContact = ({ onSaveContact, editingContact, onUpdateContact }) => {
 
     return (
         <Form className='form-contacts' onSubmit={handleSubmit}>
+            <Form.Group>
+                <Form.Label>First Name</Form.Label>
+                <input
+                    type="text"
+                    id="add-user-name"
+                    placeholder="First Name"
+                    required
+                    value={contact.firstname}
+                    onChange={handleFirstNameChange}
+                />
+            </Form.Group>
     </Form>
 );
 };
