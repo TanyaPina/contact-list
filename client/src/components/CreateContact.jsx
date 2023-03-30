@@ -106,6 +106,17 @@ const CreateContact = ({ onSaveContact, editingContact, onUpdateContact }) => {
                     onChange={handleFirstNameChange}
                 />
             </Form.Group>
+            <Form.Group>
+                <Form.Label>Last Name</Form.Label>
+                <input
+                    type="text"
+                    id="add-user-lastname"
+                    placeholder="Last Name"
+                    required
+                    value={contact.lastname}
+                    onChange={handleLastnameChange}
+                />
+            </Form.Group>
     </Form>
 );
 };
