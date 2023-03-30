@@ -40,7 +40,7 @@ const CreateContact = ({ onSaveContact, editingContact, onUpdateContact }) => {
     };
     
     const handleNotesChange = (event) => {
-        const is_current = event.target.value;
+        const notes = event.target.value;
         setContact((contact) => ({ ...contact, notes}));
     };
 
@@ -144,17 +144,6 @@ const CreateContact = ({ onSaveContact, editingContact, onUpdateContact }) => {
                     onChange={handlePhoneChange}
                 />
             </Form.Group>
-            <Form.Check
-                type={'checkbox'}
-                id={`isCurrent`}
-                checked={contact.is_current}
-                onChange={handleCheckChange}
-                label={`Are they in the current program?`}
-            />
-            <Form.Group>
-            <Button type="submit" variant="outline-success">{contact.id ? "Edit Student" : "Add Student"}</Button>
-            {contact.id ? <Button type="button" variant="outline-warning" onClick={clearForm}>Cancel</Button> : null}
-            </Form.Group>
             <Form.Group>
                 <Form.Label>Notes</Form.Label>
                 <input
@@ -165,6 +154,17 @@ const CreateContact = ({ onSaveContact, editingContact, onUpdateContact }) => {
                     value={contact.notes}
                     onChange={handleNotesChange}
                 />
+            </Form.Group>
+            <Form.Check
+                type={'checkbox'}
+                id={`isCurrent`}
+                checked={contact.is_current}
+                onChange={handleCheckChange}
+                label={`Are they in the current program?`}
+            />
+            <Form.Group>
+            <Button type="submit" variant="outline-success">{contact.id ? "Edit Student" : "Add Student"}</Button>
+            {contact.id ? <Button type="button" variant="outline-warning" onClick={clearForm}>Cancel</Button> : null}
             </Form.Group>
     </Form>
 );
