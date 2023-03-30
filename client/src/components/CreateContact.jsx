@@ -144,6 +144,17 @@ const CreateContact = ({ onSaveContact, editingContact, onUpdateContact }) => {
                     onChange={handlePhoneChange}
                 />
             </Form.Group>
+            <Form.Check
+                type={'checkbox'}
+                id={`isCurrent`}
+                checked={contact.is_current}
+                onChange={handleCheckChange}
+                label={`Are they in the current program?`}
+            />
+            <Form.Group>
+            <Button type="submit" variant="outline-success">{contact.id ? "Edit Student" : "Add Student"}</Button>
+            {contact.id ? <Button type="button" variant="outline-warning" onClick={clearForm}>Cancel</Button> : null}
+            </Form.Group>
     </Form>
 );
 };
