@@ -163,7 +163,7 @@ const CreateContact = ({ onSaveContact, editingContact, onUpdateContact }) => {
                 label={`Are they in the current program?`}
             />
             <Form.Group>
-            <Button type="submit" variant="outline-success">{contact.id ? "Edit Student" : "Add Student"}</Button>
+            <Button type="submit" variant="outline-success">{contact.id ? "Edit Contact" : "Add Contact"}</Button>
             {contact.id ? <Button type="button" variant="outline-warning" onClick={clearForm}>Cancel</Button> : null}
             </Form.Group>
     </Form>
