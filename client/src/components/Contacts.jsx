@@ -23,9 +23,16 @@ const ListContacts = () => {
         loadContacts();
     }, [contacts]);
 
+    //A function to add new contacts
     const onSaveContact = (newContact) => {
         //console.log(newStudent, "From the parent - List of Students");
         setContacts((contacts) => [...contacts, newContacts]);
     }
-    
+
+    //A function to control the update in the parent (contact component)
+    const updateContact = (savedContact) => {
+        // This function should update the whole list of contacts  
+        loadContacts();
+    }
+
 export default ListContacts
