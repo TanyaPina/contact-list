@@ -35,4 +35,16 @@ const ListContacts = () => {
         loadContacts();
     }
 
+    //A function to handle the deletes
+    const onDelete = (contact) => {
+        return fetch(`http://localhost:8080/api/contacts/${contact.id}`, {
+            method: "DELETE"
+        }).then((response) => {
+            //console.log(response);
+            if (response.ok) {
+                loadContacts();
+            }
+        })
+    }
+
 export default ListContacts
