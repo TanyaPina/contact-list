@@ -15,7 +15,11 @@ const Contact = ({contact, toUpdate, toDelete}) => {
 
     return (
         <Card>
-            
+            <Card.Body>
+            <Card.Title>{contact.firstname} {contact.lastname}</Card.Title>
+            <Button variant="outline-danger" onClick={()=>{onDelete(contact)}} style={{padding: '0.6em', marginRight:'0.9em'}}><ioicons.IoTrash/></Button>
+            <Button variant="outline-info" onClick={()=>{onUpdate(contact)}} style={{padding: '0.6em'}}> <ioicons.IoSync/></Button>
+            </Card.Body>            
         </Card>
 
     )
