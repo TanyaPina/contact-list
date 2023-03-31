@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import * as ioicons from 'react-icons/io5'
-import MyForm from './Form';
+import CreateContact from './CreateContact';
+import Contact from './Contact';
 
 const ListContacts = () => {
 
     // this is my original state with an array of contacts
     const [contacts, setContacts] = useState([]);
-}
+
     //this is the state needed for the UpdateRequest
     const [editingContact, setEditingSContact] = useState(null)
 
@@ -52,5 +53,19 @@ const ListContacts = () => {
 
     }
 
+    return (
+        <div className="mybody">
+        <div className="list-contacts">
+            <h2>Techtonica Participants </h2>
+            <ul>
+                {contacts.map((contact) => {
+                    return <li key={contact.id}> <Contact contact={contact} toDelete={onDelete} toUpdate={onUpdate} /></li>
+                })}
+            </ul>
+        </div>
+        <CreateContact key={editingContact ? editingContact.id : null} onSaveContact={onSaveContact} editingContact={editingContact} onUpdateContact={updateContact} />
+        </div>
+    );
+}
 
 export default ListContacts
