@@ -40,11 +40,17 @@ const ListContacts = () => {
         return fetch(`http://localhost:8080/api/contacts/${contact.id}`, {
             method: "DELETE"
         }).then((response) => {
-            //console.log(response);
             if (response.ok) {
                 loadContacts();
             }
         })
     }
+
+    //A function to handle updates
+    const onUpdate = (toUpdateContact) => {
+        setEditingContact(toUpdateContact);
+
+    }
+
 
 export default ListContacts
