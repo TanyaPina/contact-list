@@ -38,7 +38,7 @@ app.post('/api/contacts', async (req, res) => {
         };
 
         const result = await db.query(
-            'INSERT INTO contacts(firstname, lastname, email, phone, is_current, notes) VALUES($1, $2, $3, $4, $5, $6) RETURNING *',
+            'INSERT INTO contacts(firstname, lastname, email, phone, is_current, notes) VALUES($1, $2, $3, $4, $5, $6, $7) RETURNING *',
             [newContact.firstname, newContact.lastname, newContact.email, newContact.phone, newContact.is_current, newContact.notes],
         );
         res.json(result.rows[0]);

@@ -9,7 +9,7 @@ const ListContacts = () => {
     const [contacts, setContacts] = useState([]);
 
     //this is the state needed for the UpdateRequest
-    const [editingContact, setEditingSContact] = useState(null)
+    const [editingContact, setEditingContact] = useState(null)
 
     const loadContacts = () => {
         // A function to fetch the list of contacts that will be load anytime that list changes
@@ -26,7 +26,7 @@ const ListContacts = () => {
 
     //A function to add new contacts
     const onSaveContact = (newContact) => {
-        //console.log(newStudent, "From the parent - List of Students");
+        //console.log(newContact, "From the parent - List of Contacts");
         setContacts((contacts) => [...contacts, newContacts]);
     }
 
@@ -56,7 +56,7 @@ const ListContacts = () => {
     return (
         <div className="mybody">
         <div className="list-contacts">
-            <h2>Techtonica Participants </h2>
+            <h2>Contact List </h2>
             <ul>
                 {contacts.map((contact) => {
                     return <li key={contact.id}> <Contact contact={contact} toDelete={onDelete} toUpdate={onUpdate} /></li>
@@ -68,4 +68,4 @@ const ListContacts = () => {
     );
 }
 
-export default ListContacts
+export default ListContacts;
